@@ -4,7 +4,7 @@ export default function Hero() {
     return (
         <section className="relative h-screen flex items-center px-margin-desktop max-w-container-max-width mx-auto overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center w-full h-full">
-                <div className="lg:col-span-7 z-10">
+                <div className="lg:col-span-6 z-10">
                     <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">
                         The Standard for <br />Product Excellence.
                     </h1>
@@ -21,8 +21,10 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="hidden lg:block lg:col-span-5 h-full self-stretch relative z-0">
-                    <HeroScene />
+                <div className="hidden lg:flex lg:col-span-6 h-full items-center justify-center relative z-0">
+                    <div className="w-full aspect-square max-w-[550px] relative">
+                        <HeroScene />
+                    </div>
                 </div>
             </div>
         </section>

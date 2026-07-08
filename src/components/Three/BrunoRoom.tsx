@@ -5,11 +5,12 @@ import { useFrame, type ThreeElements } from '@react-three/fiber';
 
 export default function BrunoRoom(props: ThreeElements['group']) {
     const { scene } = useGLTF('/room-assets/roomModel.glb');
-    const bakedTexture = useTexture('/room-assets/bakedDay.jpg');
+    const bakedTexture = useTexture('/room-assets/bakedNight.jpg');
+    bakedTexture.flipY = false;
 
     useEffect(() => {
-        bakedTexture.flipY = false;
         bakedTexture.colorSpace = THREE.SRGBColorSpace;
+        bakedTexture.needsUpdate = true;
         const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
 
         scene.traverse((child) => {
@@ -51,4 +52,4 @@ export default function BrunoRoom(props: ThreeElements['group']) {
 }
 
 useGLTF.preload('/room-assets/roomModel.glb');
-useTexture.preload('/room-assets/bakedDay.jpg');
+useTexture.preload('/room-assets/bakedNight.jpg');
