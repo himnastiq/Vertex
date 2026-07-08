@@ -4,8 +4,8 @@ import * as THREE from 'three';
 import { useFrame, type ThreeElements } from '@react-three/fiber';
 
 export default function BrunoRoom(props: ThreeElements['group']) {
-    const { scene } = useGLTF('/room-assets/roomModel.glb');
-    const bakedTexture = useTexture('/room-assets/bakedNight.jpg');
+    const { scene } = useGLTF(`${import.meta.env.BASE_URL}room-assets/roomModel.glb`);
+    const bakedTexture = useTexture(`${import.meta.env.BASE_URL}room-assets/bakedNight.jpg`);
     bakedTexture.flipY = false;
 
     useEffect(() => {
@@ -51,5 +51,5 @@ export default function BrunoRoom(props: ThreeElements['group']) {
     );
 }
 
-useGLTF.preload('/room-assets/roomModel.glb');
-useTexture.preload('/room-assets/bakedNight.jpg');
+useGLTF.preload(`${import.meta.env.BASE_URL}room-assets/roomModel.glb`);
+useTexture.preload(`${import.meta.env.BASE_URL}room-assets/bakedNight.jpg`);
